@@ -1,14 +1,12 @@
 module "eks" {
   source          = "terraform-aws-modules/eks/aws"
   cluster_name    = local.cluster_name
-  cluster_version = "1.17"
-  subnets         = ["subnet-83a90ce5","subnet-7335932c","subnet-298cf964","subnet-f349e9d2","subnet-5d62fd53"]
+  cluster_version = var.cluster_version
+  subnets         = var.subnet_ids
 
-  tags = {
-    Environment = "backbase-dev"
-  }
+  tags = var.tags
 
-  vpc_id = "vpc-368a7b4b"
+  vpc_id = var.vpc_id
 
   worker_groups = [
     {
