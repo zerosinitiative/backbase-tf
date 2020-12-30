@@ -1,6 +1,6 @@
 resource "aws_security_group" "worker_group_mgmt_one" {
   name_prefix = "worker_group_mgmt_one"
-  vpc_id      = module.vpc.vpc_id
+  vpc_id      = "vpc-368a7b4b"
 
   ingress {
     from_port = 22
@@ -17,7 +17,7 @@ resource "aws_security_group" "worker_group_mgmt_one" {
 
 resource "aws_security_group" "all_worker_mgmt" {
   name_prefix = "all_worker_management"
-  vpc_id      = module.vpc.vpc_id
+  vpc_id      = "vpc-368a7b4b"
 
   ingress {
     from_port = 22
