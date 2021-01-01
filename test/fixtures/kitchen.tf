@@ -21,7 +21,7 @@ module "eks-test" {
       from_port   = 31000
       to_port     = 33000
       protocol    = "tcp"
-      cidr_blocks = ["27.5.177.248/32"]
+      cidr_blocks = ["27.5.239.252/32"]
     }
   }
   tags = {
